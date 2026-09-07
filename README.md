@@ -5,7 +5,7 @@
 ![Regression](https://img.shields.io/badge/Testing-Regression-6F42C1)
 ![UAT](https://img.shields.io/badge/Testing-UAT-F59E0B)
 
-A practical portfolio showcasing my **manual software testing approach** through synthetic examples of test planning, test design, functional testing, regression testing, defect reporting, RTM and UAT validation.
+A practical portfolio showcasing my **manual software testing approach** through synthetic examples of test planning, test design, functional testing, regression testing, defect reporting, RTM, UAT validation and reusable QA checklists.
 
 This repository reflects my strongest QA experience: understanding requirements, preparing test coverage, executing scenarios, reproducing issues, validating fixes and communicating defects clearly.
 
@@ -23,7 +23,10 @@ This repository reflects my strongest QA experience: understanding requirements,
 - Defect reporting with severity and priority
 - Retesting and regression after fixes
 - UAT readiness checks
-- Basic API/database validation awareness
+- Payment/POS validation thinking
+- Basic API validation using Postman
+- Basic database/SQL verification awareness
+- Deployment and environment validation from a QA/support perspective
 - Clear QA documentation
 
 ## Demo application used for examples
@@ -50,7 +53,11 @@ manual-testing-portfolio/
 │   ├── defect-report-examples.md
 │   ├── rtm.md
 │   ├── regression-checklist.md
-│   └── uat-checklist.md
+│   ├── uat-checklist.md
+│   ├── smoke-checklist.md
+│   ├── pos-payment-checklist.md
+│   ├── api-validation-checklist.md
+│   └── deployment-validation-checklist.md
 ├── test-cases/
 │   └── manual-test-cases.csv
 ├── templates/
@@ -58,6 +65,17 @@ manual-testing-portfolio/
 │   └── test-case-template.md
 └── README.md
 ```
+
+## Reusable QA checklists
+
+| Checklist | Purpose |
+|---|---|
+| [Smoke Testing](docs/smoke-checklist.md) | Verify a new build is stable enough for detailed testing |
+| [Regression Testing](docs/regression-checklist.md) | Recheck critical areas after fixes or release changes |
+| [UAT](docs/uat-checklist.md) | Validate business readiness before release |
+| [POS / Payment](docs/pos-payment-checklist.md) | Validate common purchase, card, refund, reversal, settlement and ECR behavior |
+| [Basic API Validation](docs/api-validation-checklist.md) | Manual Postman checks for request, response, negative cases and basic data validation |
+| [Deployment Validation](docs/deployment-validation-checklist.md) | Verify services, containers, connectivity and post-deployment smoke checks |
 
 ## My manual testing workflow
 
@@ -122,7 +140,7 @@ A useful defect should allow another person to reproduce the issue without guess
 
 ## Important distinction
 
-This is a **manual QA portfolio**, not a claim of advanced automation engineering experience. My strongest areas are manual functional testing, payments/POS testing, API validation with Postman, SQL-based verification, UAT and production issue analysis. Automation is an area I am continuing to learn.
+This is a **manual QA portfolio**, not a claim of advanced automation engineering experience. My strongest areas are manual functional testing, payments/POS testing, UAT and production issue analysis. I also use Postman and SQL for basic validation, and I have practical exposure to deployment/environment checks. Automation is an area I am continuing to learn.
 
 ## Related projects
 
