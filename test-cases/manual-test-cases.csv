@@ -1,0 +1,18 @@
+TestCaseID,Module,Scenario,Precondition,Steps,TestData,ExpectedResult,Priority,Type
+TC-001,Login,Login with valid credentials,Active test user exists,"Open login page; enter valid username and password; click Login","user_demo / valid password",User is authenticated and redirected to home page,High,Positive
+TC-002,Login,Login with invalid password,Active test user exists,"Open login page; enter valid username and invalid password; click Login","user_demo / wrong password",Login is rejected and clear error message is shown,High,Negative
+TC-003,Login,Blank mandatory fields,None,"Open login page; leave username and password blank; click Login",Blank,Required-field validation is shown and request is not submitted,High,Negative
+TC-004,Search,Search exact product,Product exists,"Login; enter exact product name in search; submit","Demo Headphones",Matching product is displayed,Medium,Positive
+TC-005,Search,Search no-result value,None,"Enter a value with no matching product; submit","ZZZ-NoProduct",No-result state is shown without application error,Medium,Negative
+TC-006,Cart,Add item to cart,Product is available,"Open product; click Add to Cart",Qty 1,Item appears once in cart with correct price,High,Functional
+TC-007,Cart,Update quantity and total,Item is in cart,"Set quantity from 1 to 2; observe total",Unit price 100.00,Quantity becomes 2 and subtotal becomes 200.00,High,Boundary
+TC-008,Cart,Remove item from cart,Item is in cart,"Click Remove; confirm cart state",Qty 1,Item is removed and totals are recalculated,High,Functional
+TC-009,Checkout,Missing mandatory address,Item is in cart,"Proceed to checkout; leave address blank; submit",Blank address,Checkout is blocked and address validation is shown,High,Negative
+TC-010,Checkout,Valid checkout data,Item is in cart,"Proceed to checkout; enter valid details; continue",Synthetic customer/address,Checkout proceeds to payment selection,Critical,Positive
+TC-011,Payment,Approved payment,Valid checkout prepared,"Select mock payment; submit; return approved response",Amount 100.00,One successful order is created with correct amount,Critical,Positive
+TC-012,Payment,Declined payment,Valid checkout prepared,"Submit mock payment; return declined response",Amount 100.00,Customer sees decline and no successful order is created,Critical,Negative
+TC-013,Payment,Customer cancellation,Valid checkout prepared,"Open payment step; cancel transaction",Amount 100.00,Application returns to a safe state and does not create successful order,High,Negative
+TC-014,Payment,Timeout then retry,Valid checkout prepared,"Submit payment; simulate timeout; retry after checking state",Amount 100.00,No duplicate successful order is created,Critical,Integration
+TC-015,Orders,Order visible in history,Successful order exists,"Open Order History; locate latest order",Synthetic order reference,Correct reference amount and status are shown,High,Functional
+TC-016,Refund,Eligible refund request,Eligible completed order exists,"Open order; choose Refund; submit valid request",Full amount,Refund request is accepted and status is updated,High,Positive
+TC-017,Refund,Ineligible refund request,Ineligible order exists,"Open order; attempt Refund",Ineligible order,Refund action is blocked with correct reason,High,Negative
